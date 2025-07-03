@@ -5,25 +5,49 @@ const config: CapacitorConfig = {
   appName: 'TradeNote',
   webDir: 'dist',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'https',
+    cleartext: true // Allow HTTP for development
   },
   plugins: {
     SplashScreen: {
-      launchShowDuration: 3000,
+      launchShowDuration: 2000,
       backgroundColor: "#1a1a2e",
       showSpinner: true,
-      spinnerColor: "#0ea5e9"
+      spinnerColor: "#0ea5e9",
+      androidSpinnerStyle: "large",
+      splashFullScreen: true,
+      splashImmersive: true
     },
     StatusBar: {
       style: 'dark',
-      backgroundColor: '#1a1a2e'
+      backgroundColor: '#1a1a2e',
+      overlaysWebView: false
     },
     LocalNotifications: {
       smallIcon: "ic_stat_icon_config_sample",
-      iconColor: "#0ea5e9"
+      iconColor: "#0ea5e9",
+      sound: "default"
     },
     PushNotifications: {
       presentationOptions: ["badge", "sound", "alert"]
+    },
+    Keyboard: {
+      resize: "body",
+      style: "dark",
+      resizeOnFullScreen: true
+    },
+    App: {
+      url: "https://tradenote.app",
+      appId: "com.tradenote.app"
+    }
+  },
+  // Android-specific configuration
+  android: {
+    buildOptions: {
+      keystorePath: undefined,
+      keystoreAlias: undefined,
+      keystorePassword: undefined,
+      keystoreAliasPassword: undefined
     }
   }
 };

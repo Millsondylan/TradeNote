@@ -1,0 +1,47 @@
+{
+	"appId": "com.tradenote.app",
+	"appName": "TradeNote",
+	"webDir": "dist",
+	"server": {
+		"androidScheme": "https",
+		"cleartext": true
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 2000,
+			"backgroundColor": "#1a1a2e",
+			"showSpinner": true,
+			"spinnerColor": "#0ea5e9",
+			"androidSpinnerStyle": "large",
+			"splashFullScreen": true,
+			"splashImmersive": true
+		},
+		"StatusBar": {
+			"style": "dark",
+			"backgroundColor": "#1a1a2e",
+			"overlaysWebView": false
+		},
+		"LocalNotifications": {
+			"smallIcon": "ic_stat_icon_config_sample",
+			"iconColor": "#0ea5e9",
+			"sound": "default"
+		},
+		"PushNotifications": {
+			"presentationOptions": [
+				"badge",
+				"sound",
+				"alert"
+			]
+		},
+		"Keyboard": {
+			"resize": "body",
+			"style": "dark",
+			"resizeOnFullScreen": true
+		},
+		"App": {
+			"url": "https://tradenote.app",
+			"appId": "com.tradenote.app"
+		}
+	},
+	"android": {}
+}

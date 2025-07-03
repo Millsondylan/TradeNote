@@ -202,6 +202,88 @@ const router = createRouter({
         },
         component: () =>
             import('../views/CheckoutSuccess.vue')
+    },
+    // New Trading Features
+    {
+        path: '/live-trades',
+        name: 'live-trades',
+        meta: {
+            title: "Live Trades",
+            layout: DashboardLayout
+        },
+        component: () =>
+            import('../views/LiveTrades.vue')
+    },
+    {
+        path: '/history',
+        name: 'history',
+        meta: {
+            title: "Trading History",
+            layout: DashboardLayout
+        },
+        component: () =>
+            import('../views/History.vue')
+    },
+    {
+        path: '/watchlist',
+        name: 'watchlist',
+        meta: {
+            title: "Watchlist",
+            layout: DashboardLayout
+        },
+        component: () =>
+            import('../views/Watchlist.vue')
+    },
+    {
+        path: '/alarms',
+        name: 'alarms',
+        meta: {
+            title: "Price Alarms",
+            layout: DashboardLayout
+        },
+        component: () =>
+            import('../views/Alarms.vue')
+    },
+    // AI & Analytics Features
+    {
+        path: '/ai-coach',
+        name: 'ai-coach',
+        meta: {
+            title: "AI Coach",
+            layout: DashboardLayout
+        },
+        component: () =>
+            import('../views/AICoach.vue')
+    },
+    {
+        path: '/ai-strategy',
+        name: 'ai-strategy',
+        meta: {
+            title: "AI Strategy Builder",
+            layout: DashboardLayout
+        },
+        component: () =>
+            import('../views/AICoach.vue')
+    },
+    {
+        path: '/performance-calendar',
+        name: 'performance-calendar',
+        meta: {
+            title: "Performance Calendar",
+            layout: DashboardLayout
+        },
+        component: () =>
+            import('../views/PerformanceCalendar.vue')
+    },
+    {
+        path: '/news',
+        name: 'news',
+        meta: {
+            title: "Market News",
+            layout: DashboardLayout
+        },
+        component: () =>
+            import('../views/News.vue')
     }
     ]
 })
