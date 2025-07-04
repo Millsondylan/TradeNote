@@ -39,8 +39,7 @@ const router = createRouter({
             title: "Login",
             layout: LoginRegisterLayout
         },
-        component: () =>
-            import('../views/Login.vue')
+        component: () => import('../views/Login.vue')
     },
     {
         path: '/register',
@@ -49,8 +48,7 @@ const router = createRouter({
             title: "Register",
             layout: LoginRegisterLayout
         },
-        component: () =>
-            import('../views/Register.vue')
+        component: () => import('../views/Register.vue')
     },
     {
         path: '/dashboard',
@@ -59,8 +57,7 @@ const router = createRouter({
             title: "Dashboard",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Dashboard.vue')
+        component: () => import('../views/Dashboard.vue')
     },
     {
         path: '/calendar',
@@ -69,8 +66,7 @@ const router = createRouter({
             title: "Calendar",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Calendar.vue')
+        component: () => import('../views/Calendar.vue')
     },
     {
         path: '/daily',
@@ -79,8 +75,7 @@ const router = createRouter({
             title: "Daily",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Daily.vue')
+        component: () => import('../views/Daily.vue')
     },
     {
         path: '/diary',
@@ -89,8 +84,7 @@ const router = createRouter({
             title: "Diary",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Diary.vue')
+        component: () => import('../views/Diary.vue')
     },
     {
         path: '/screenshots',
@@ -99,8 +93,7 @@ const router = createRouter({
             title: "Screenshots",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Screenshots.vue')
+        component: () => import('../views/Screenshots.vue')
     },
     {
         path: '/playbook',
@@ -109,8 +102,7 @@ const router = createRouter({
             title: "Playbook",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Playbook.vue')
+        component: () => import('../views/Playbook.vue')
     },
     {
         path: '/addTrades',
@@ -119,9 +111,7 @@ const router = createRouter({
             title: "Add Trades",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/AddTrades.vue')
-        
+        component: () => import('../views/AddTrades.vue')
     },
     {
         path: '/addDiary',
@@ -130,8 +120,7 @@ const router = createRouter({
             title: "Add Diary",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/AddDiary.vue')
+        component: () => import('../views/AddDiary.vue')
     },
     {
         path: '/addPlaybook',
@@ -140,8 +129,7 @@ const router = createRouter({
             title: "Add Playbook",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/AddPlaybook.vue')
+        component: () => import('../views/AddPlaybook.vue')
     },
     {
         path: '/addScreenshot',
@@ -150,8 +138,7 @@ const router = createRouter({
             title: "Add Screenshot",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/AddScreenshot.vue')
+        component: () => import('../views/AddScreenshot.vue')
     },
     {
         path: '/addExcursions',
@@ -160,8 +147,7 @@ const router = createRouter({
             title: "Add Excursions",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/AddExcursions.vue')
+        component: () => import('../views/AddExcursions.vue')
     },
     {
         path: '/settings',
@@ -170,8 +156,7 @@ const router = createRouter({
             title: "Settings",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Settings.vue')
+        component: () => import('../views/Settings.vue')
     },
     {
         path: '/imports',
@@ -180,8 +165,7 @@ const router = createRouter({
             title: "Imports",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Imports.vue')
+        component: () => import('../views/Imports.vue')
     },
     {
         path: '/checkout',
@@ -190,8 +174,7 @@ const router = createRouter({
             title: "Checkout",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Checkout.vue')
+        component: () => import('../views/Checkout.vue')
     },
     {
         path: '/checkoutSuccess',
@@ -200,8 +183,7 @@ const router = createRouter({
             title: "Checkout Success",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/CheckoutSuccess.vue')
+        component: () => import('../views/CheckoutSuccess.vue')
     },
     // New Trading Features
     {
@@ -211,8 +193,7 @@ const router = createRouter({
             title: "Live Trades",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/LiveTrades.vue')
+        component: () => import('../views/LiveTrades.vue')
     },
     {
         path: '/history',
@@ -221,8 +202,7 @@ const router = createRouter({
             title: "Trading History",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/History.vue')
+        component: () => import('../views/History.vue')
     },
     {
         path: '/watchlist',
@@ -231,8 +211,7 @@ const router = createRouter({
             title: "Watchlist",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Watchlist.vue')
+        component: () => import('../views/Watchlist.vue')
     },
     {
         path: '/alarms',
@@ -241,8 +220,7 @@ const router = createRouter({
             title: "Price Alarms",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/Alarms.vue')
+        component: () => import('../views/Alarms.vue')
     },
     // AI & Analytics Features
     {
@@ -252,8 +230,7 @@ const router = createRouter({
             title: "AI Coach",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/AICoach.vue')
+        component: () => import('../views/AICoach.vue')
     },
     {
         path: '/ai-strategy',
@@ -262,8 +239,7 @@ const router = createRouter({
             title: "AI Strategy Builder",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/AICoach.vue')
+        component: () => import('../views/AICoach.vue')
     },
     {
         path: '/performance-calendar',
@@ -272,8 +248,7 @@ const router = createRouter({
             title: "Performance Calendar",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/PerformanceCalendar.vue')
+        component: () => import('../views/PerformanceCalendar.vue')
     },
     {
         path: '/news',
@@ -282,8 +257,7 @@ const router = createRouter({
             title: "Market News",
             layout: DashboardLayout
         },
-        component: () =>
-            import('../views/News.vue')
+        component: () => import('../views/News.vue')
     }
     ]
 })

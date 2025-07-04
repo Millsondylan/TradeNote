@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useUser } from '../contexts/UserContext';
-import { localDatabase, Trade } from '../lib/localDatabase';
+import localDatabase, { Trade } from '../lib/localDatabase';
 import { realDataService, PriceData } from '../lib/realDataService';
 import { aiStreamService, PortfolioAnalysis } from '../lib/aiStreamService';
 import { 

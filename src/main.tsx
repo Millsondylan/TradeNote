@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { UserProvider } from './contexts/UserContext';
 import { useUser } from './contexts/UserContext';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Import pages
 import Auth from './pages/Auth';
@@ -43,6 +44,8 @@ const queryClient = new QueryClient({
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { state } = useUser();
   
+  console.log('ProtectedRoute state:', state);
+  
   if (state.isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 flex items-center justify-center">
@@ -64,6 +67,8 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
 // Main App Component
 const App: React.FC = () => {
   const { state } = useUser();
+  
+  console.log('App component state:', state);
   
   return (
     <Router>
@@ -167,24 +172,39 @@ const App: React.FC = () => {
 
 // Root Component with Providers
 const Root: React.FC = () => {
+  console.log('Root component rendering...');
+  
   return (
-    <QueryClientProvider client={queryClient}>
-      <UserProvider>
-        <App />
-      </UserProvider>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <UserProvider>
+          <App />
+        </UserProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 };
 
 // Initialize the app
+console.log('Starting app initialization...');
 const rootElement = document.getElementById('root');
+console.log('Root element:', rootElement);
+
 if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(
-    <React.StrictMode>
-      <Root />
-    </React.StrictMode>
-  );
+  try {
+    const root = ReactDOM.createRoot(rootElement);
+    console.log('React root created successfully');
+    root.render(
+      <React.StrictMode>
+        <Root />
+      </React.StrictMode>
+    );
+    console.log('App rendered successfully');
+  } catch (error) {
+    console.error('Error rendering app:', error);
+  }
+} else {
+  console.error('Root element not found!');
 }
 
 export default Root; 

@@ -74,11 +74,15 @@ class LocalDatabase {
   }
 
   async initialize(): Promise<void> {
-    if (this.isInitialized) return;
+    if (this.isInitialized) {
+      console.log('Database already initialized, skipping...');
+      return;
+    }
 
     try {
-      console.log('Initializing database...');
+      console.log('=== Database Initialization Start ===');
       console.log('Platform:', this.isMobile ? 'Mobile' : 'Web');
+      console.log('CapacitorSQLite available:', !!CapacitorSQLite);
 
       // Note: Permissions are handled automatically by Capacitor on mobile
       if (this.isMobile) {
@@ -94,17 +98,22 @@ class LocalDatabase {
         1,
         false
       );
+      console.log('Database connection created');
 
+      console.log('Opening database...');
       await this.db.open();
       console.log('Database opened successfully');
 
+      console.log('Creating tables...');
       await this.createTables();
       console.log('Tables created successfully');
       
       this.isInitialized = true;
-      console.log('Database initialization complete');
+      console.log('=== Database initialization complete ===');
     } catch (error) {
-      console.error('Failed to initialize database:', error);
+      console.error('=== Database initialization failed ===');
+      console.error('Error details:', error);
+      console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
       throw new Error(`Database initialization failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
   }

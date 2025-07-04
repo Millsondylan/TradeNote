@@ -1,1 +1,0 @@
-import{_ as o}from"./LoginRegister-BQTL9szL.js";import{c as s,o as i}from"./vendor-CBBAIpTX.js";import"./main-LE54y1pd.js";import"./capacitor-3Yedw1XA.js";import"./ui-Bs04w-Y-.js";const r={__name:"Login",setup:r=>(r,t)=>(i(),s(o))};export{r as default};

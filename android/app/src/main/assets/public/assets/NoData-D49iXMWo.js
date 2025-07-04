@@ -1,1 +1,0 @@
-import{_ as o}from"./main-LE54y1pd.js";import{o as r,z as a,B as s}from"./vendor-CBBAIpTX.js";const t={},n={class:"text-center col-12 dailyCard"},e=[s("div",null,"No Data",-1)];const i=o(t,[["render",function(o,s){return r(),a("div",n,e)}]]);export{i as N};

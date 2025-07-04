@@ -12,7 +12,7 @@ import {
   Clock,
   AlertTriangle
 } from 'lucide-react';
-import { localDatabase, Trade } from '../lib/localDatabase';
+import localDatabase, { Trade } from '../lib/localDatabase';
 import { realDataService, PriceData } from '../lib/realDataService';
 
 interface QuickStats {

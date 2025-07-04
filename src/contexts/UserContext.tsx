@@ -108,35 +108,47 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   useEffect(() => {
     const loadUser = async () => {
       try {
+        console.log('UserProvider: Starting user load...');
         dispatch({ type: 'SET_LOADING', payload: true });
         
         // Initialize database
+        console.log('UserProvider: Initializing database...');
         await localDatabase.initialize();
+        console.log('UserProvider: Database initialized successfully');
         
         // Load preferences from localStorage
+        console.log('UserProvider: Loading preferences...');
         const savedPreferences = localStorage.getItem('userPreferences');
         if (savedPreferences) {
           const preferences = JSON.parse(savedPreferences);
           dispatch({ type: 'UPDATE_PREFERENCES', payload: preferences });
+          console.log('UserProvider: Preferences loaded');
         }
 
         // Load user from localStorage
+        console.log('UserProvider: Loading user from localStorage...');
         const savedUser = localStorage.getItem('user');
         if (savedUser) {
           const user = JSON.parse(savedUser);
+          console.log('UserProvider: Found saved user:', user.name);
           // Verify user still exists in database
           const dbUser = await localDatabase.getUser(user.id);
           if (dbUser) {
             dispatch({ type: 'SET_USER', payload: dbUser });
+            console.log('UserProvider: User authenticated from database');
           } else {
             // User no longer exists in database, clear localStorage
             localStorage.removeItem('user');
+            console.log('UserProvider: User not found in database, cleared localStorage');
           }
+        } else {
+          console.log('UserProvider: No saved user found');
         }
       } catch (error) {
-        console.error('Error loading user:', error);
+        console.error('UserProvider: Error loading user:', error);
         dispatch({ type: 'SET_ERROR', payload: 'Failed to load user data' });
       } finally {
+        console.log('UserProvider: Finished loading, setting loading to false');
         dispatch({ type: 'SET_LOADING', payload: false });
       }
     };
